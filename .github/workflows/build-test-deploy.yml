@@ -24,4 +24,8 @@ jobs:
           node-version: '18.x'
       - run: npm install
       - run: npm test
+  eslint:
+    name: Run ESLint via Reusable Workflow
+    uses: ./.github/workflows/eslint.yml # Calls the reusable workflow
+    needs: [build, test]
     
